@@ -1,0 +1,141 @@
+:root{
+    /* overall stuff */
+    --font-color: rgb(50,50,50);
+    --bg-light-blue: rgb(242,242,247);
+    --light-transp-blue: rgb(0,0,50,0.1);
+    --dark-transp-blue:rgba(0,0,50,.3);
+    --light-shadow: 0 10px 30px rgb(0,0,50,0.1);
+    --pretty-green: rgb(140,223,130);
+    --pretty-yellow: rgb(255 216 107);
+    --pretty-red:rgb(255 109 109);
+    --pretty-purple:rgb(245 152 229);
+    --navbar-gap: max(12vh,100px);
+    --lighter-font-color: rgb(111,111,111);
+}
+
+button{
+    font-weight: 600;
+    font-family: 'Poppins';
+    cursor: pointer;
+    color:var(--font-color);
+}
+
+body{
+    margin:0;
+    font-family:'Poppins';
+    background: var(--bg-light-blue);
+}
+
+
+
+.roadBlock{
+    width: 20%;
+    margin:auto;
+    border:2px solid var(--dark-transp-blue);
+    background: white;
+    border-radius: 15px;
+    padding:10px;
+    transition:.5s;
+}
+
+.content p{
+    margin-top:0px;
+}
+
+.roadBlock h3{
+    font-weight: 600;
+    margin:0;
+}
+
+
+.required{
+    background:var(--pretty-yellow);
+    padding:5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin:0;
+    font-weight: 600;
+    color:rgba(0,0,50,0.5);
+    border-radius: 10px;
+    width: fit-content;
+    margin-left: auto;
+    margin-bottom:10px;
+    font-size:13px;
+}
+
+.roadBlock button{
+    background: var(--pretty-green);
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: 600;
+    width: fit-content;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 16px;
+}
+
+.separator{
+    width: 2px;
+    height: 60px;
+    background:var(--dark-transp-blue);
+    margin:auto;
+}
+
+
+#popup{
+    position: fixed;
+    z-index:999;
+    opacity:0;
+    width:fit-content;
+    height:60vh;
+    background:white;
+    border-radius: 15px;
+    left:50vw;
+    top:10vh;
+    transform:translate(-50%,0);
+    border: 2px solid var(--dark-transp-blue);
+    transition:.5s;
+    pointer-events: none;
+    padding:40px;
+    overflow:auto;
+
+}
+
+#popup h2{
+    font-weight: 600;
+    margin:0;
+}
+
+#popup p{
+    margin:0;
+}
+
+#popup a{
+    background:var(--pretty-green);
+    color:var(--font-color);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+    padding:5px;
+    padding-left:10px;
+    padding-right: 10px;
+    width: fit-content;
+    display:block;
+    margin-top:10px
+}
+
+#popupBackdrop{
+    background: rgb(242 242 247 / 50%);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* opacity: .5; */
+    z-index: 997;
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: .5s;
+    pointer-events:none;
+}

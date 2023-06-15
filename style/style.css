@@ -35,7 +35,12 @@ body{
     background: white;
     border-radius: 15px;
     padding:10px;
-    transition:.5s;
+    transition:.25s;
+    cursor:pointer;
+}
+
+.roadBlock:hover{
+    padding: 20px;
 }
 
 .content p{
@@ -138,4 +143,21 @@ body{
     opacity: 0;
     transition: .5s;
     pointer-events:none;
+}
+
+
+.checkBox{
+    width: fit-content;
+    border-radius: 10px;
+    border: 2px solid var(--dark-transp-blue);
+    padding:5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.checkBox div{
+    background:var(--pretty-green);
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
 }

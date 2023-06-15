@@ -47,12 +47,12 @@ function displayBlocks(){
     let ind = 0;
     for(i of blocks){
 
-        let buttonStr = `<button onclick='popup(${ind})'>Complete</button>`
+        let buttonStr = `<button>Complete</button>`
 
-        if(getCompletionStatus(i[0]) == "incomplete") buttonStr = `<button onclick='popup(${ind})' style='background:var(--light-transp-blue)'>Incomplete</button>`;
+        if(getCompletionStatus(i[0]) == "incomplete") buttonStr = `<button style='background:var(--light-transp-blue)'>Incomplete</button>`;
 
         html += `
-            <div class='roadBlock'>
+            <div class='roadBlock' onclick='popup(${ind})'>
                 <p class='required'>Required</p>
 
                 <div class="content">
@@ -84,6 +84,26 @@ function popup(block){
     }
 
 
+    let checkbox = `
+    <div style="display:flex;align-items:center">
+        <div class="checkBox" onclick='toggleCompletionStatus(${block})'>
+            <div></div>
+        </div>
+        <p style="font-weight:600;color:var(--lighter-font-color)">Complete</p>
+    </div>
+    `;
+
+    if(getCompletionStatus(blocks[block][0]) == "incomplete"){
+        checkbox = `
+        <div style="display:flex;align-items:center">
+            <div class="checkBox" onclick='toggleCompletionStatus(${block})'>
+                <div style="background:var(--light-transp-blue)"></div>
+            </div>
+            <p style="font-weight:600;color:var(--lighter-font-color)">Incomplete</p>
+        </div>
+        `;
+    }
+
     html = `
         <h2>${blocks[block][0]}</h2>
         <p style='color:var(--lighter-font-color)'>${blocks[block][1]}</p>
@@ -95,9 +115,8 @@ function popup(block){
         ${steps}
 
         <br><br>
-        <div class="checkBox">
-            <div></div>
-        </div>
+
+        ${checkbox}
     `;
 
     document.getElementById("popup").innerHTML = html;
@@ -114,4 +133,13 @@ function hidePopup(){
     document.getElementById("popupBackdrop").style["opacity"] = 0;
     document.getElementById("popupBackdrop").style["pointer-events"] = "none";
     document.getElementById("popup").style["pointer-events"] = "none";
+}
+
+function toggleCompletionStatus(block){
+    if(getCompletionStatus(blocks[block][0]) == "complete"){
+        setCompletionStatus(blocks[block][0],"incomplete");
+    }
+    else setCompletionStatus(blocks[block][0],"complete");
+
+    popup(block);
 }

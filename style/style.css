@@ -27,6 +27,12 @@ body{
 }
 
 
+.pageHeader{
+    font-weight: 600;
+    text-align: center;
+    margin-bottom:40px
+}
+
 
 .roadBlock{
     width: 20%;
@@ -35,12 +41,13 @@ body{
     background: white;
     border-radius: 15px;
     padding:10px;
-    transition:.25s;
+    transition:.35s;
     cursor:pointer;
 }
 
 .roadBlock:hover{
-    padding: 20px;
+    padding: 15px;
+    box-shadow: var(--light-shadow);
 }
 
 .content p{
@@ -110,10 +117,12 @@ body{
 #popup h2{
     font-weight: 600;
     margin:0;
+    text-align: center;
 }
 
 #popup p{
     margin:0;
+    text-align: center;
 }
 
 #popup a{
@@ -127,7 +136,8 @@ body{
     padding-right: 10px;
     width: fit-content;
     display:block;
-    margin-top:10px
+    margin:auto;
+    margin-top:15px;
 }
 
 #popupBackdrop{

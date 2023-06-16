@@ -130,7 +130,6 @@ const blocks = [
 function isReady(id){
     let ready = true;
     for(let i = 0; i < id; i++){
-        console.log(blocks[i][0])
         if(getCompletionStatus(blocks[i][0]) != "complete" && blocks[i][5]){
             ready = false;
             break;
@@ -198,7 +197,7 @@ function popup(block){
 
 
     let checkbox = `
-    <div style="display:flex;align-items:center">
+    <div style="display:flex;align-items:center;width:fit-content;margin:auto">
         <div class="checkBox" onclick='toggleCompletionStatus(${block})'>
             <div></div>
         </div>
@@ -208,7 +207,7 @@ function popup(block){
 
     if(getCompletionStatus(blocks[block][0]) == "incomplete"){
         checkbox = `
-        <div style="display:flex;align-items:center">
+        <div style="display:flex;align-items:center;width:fit-content;margin:auto">
             <div class="checkBox" onclick='toggleCompletionStatus(${block})'>
                 <div style="background:var(--light-transp-blue)"></div>
             </div>

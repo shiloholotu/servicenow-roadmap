@@ -1,9 +1,9 @@
 :root{
     /* overall stuff */
-    --font-color: rgb(50,50,50);
-    --bg-light-blue: rgb(242,242,247);
-    --light-transp-blue: rgb(0,0,50,0.1);
-    --dark-transp-blue:rgba(0,0,50,.3);
+    --font-color: rgb(188, 187, 199);
+    --bg-light-blue: rgb(13,17,23);
+    --light-transp-blue: rgb(97,97,103, .3);
+    --dark-transp-blue: rgb(175,175,185,.3);
     --light-shadow: 0 10px 30px rgb(0,0,50,0.1);
     --pretty-green: rgb(140,223,130);
     --pretty-yellow: rgb(255 216 107);
@@ -24,13 +24,24 @@ body{
     margin:0;
     font-family:'Poppins';
     background: var(--bg-light-blue);
+    color:var(--font-color);
 }
 
 
-.pageHeader{
+#navbar{
+    position: fixed;
+    top: 0;
+    background: rgba(22,27,34,0.8);
+    width: 100vw;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px;
     font-weight: 600;
+    border-bottom: 2px solid var(--light-transp-blue);
     text-align: center;
-    margin-bottom:40px
+    backdrop-filter: blur(5px);
+    z-index: 999;
 }
 
 
@@ -38,11 +49,12 @@ body{
     width: 20%;
     margin:auto;
     border:2px solid var(--dark-transp-blue);
-    background: white;
+    background: rgb(22,27,34);
     border-radius: 15px;
     padding:10px;
     transition:.35s;
     cursor:pointer;
+    min-width: 405px;
 }
 
 .roadBlock:hover{
@@ -61,13 +73,12 @@ body{
 
 
 .required{
-    background:var(--pretty-yellow);
+    color:var(--pretty-yellow);
     padding:5px;
     padding-left: 10px;
     padding-right: 10px;
     margin:0;
     font-weight: 600;
-    color:rgba(0,0,50,0.5);
     border-radius: 10px;
     width: fit-content;
     margin-left: auto;
@@ -101,7 +112,7 @@ body{
     opacity:0;
     width:fit-content;
     height:60vh;
-    background:white;
+    background:rgb(22,27,34);
     border-radius: 15px;
     left:50vw;
     top:10vh;
@@ -127,7 +138,7 @@ body{
 
 #popup a{
     background:var(--pretty-green);
-    color:var(--font-color);
+    color:var(--bg-light-blue);
     text-decoration: none;
     font-weight: 600;
     border-radius: 10px;
@@ -141,7 +152,7 @@ body{
 }
 
 #popupBackdrop{
-    background: rgb(242 242 247 / 50%);
+    background: rgb(22 27 34 / 50%);
     position: fixed;
     top: 0;
     right: 0;

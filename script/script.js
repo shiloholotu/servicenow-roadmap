@@ -146,12 +146,12 @@ function displayBlocks(){
     let ind = 0;
     for(i of blocks){
 
-        let buttonStr = `<button>Complete</button>`
+        let buttonStr = `<button style='color:var(--bg-light-blue)'>Complete</button>`
         let style = "background:var(--bg-light-blue);box-shadow:none;padding:10px;border:2px solid var(--light-transp-blue)";
 
         if(getCompletionStatus(i[0]) == "incomplete"){
             buttonStr = `<button style='background:var(--light-transp-blue)'>Incomplete</button>`;
-            style = "background:white;";
+            style = "background:rgb(22,27,34)";
         }
 
         if(!isReady(ind)){
@@ -159,7 +159,7 @@ function displayBlocks(){
         }
 
 
-        let required = "<p class='required' style='background:var(--bg-light-blue)'>Not Required</p>"
+        let required = "<p class='required' style='color:var(--dark-transp-blue)'>Not Required</p>"
         if(i[5]){
             required = "<p class='required'>Required</p>";
         }
